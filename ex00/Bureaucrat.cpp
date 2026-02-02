@@ -1,17 +1,3 @@
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-
-class  Bureaucrat
-{
-    private:
-        const std::string name;
-        int grade;
-    public:
-        std::string getName();
-        void    getGrade();
-        void increment();
-        void decrement();
-};
-#endif
+Bureaucrat::Bureaucrat() {}
