@@ -17,23 +17,29 @@ class test00: public test
     {
         std::cout << "the new fun is done" << std::endl;
     }
+    public:
+        std::string name = "anas";
+
 };
 
 int main()
 {
-        int x = 10; 
-        int y = 0;
-        // try
-        // {
-        //     if( y == 0)
-        //         throw  test00();
-        //     std::cout << x / y << std::endl;   
-        // }
+    int i  = 0;
+    try
+    {
+        if( i == 2)
+            throw std::bad_alloc();
+        if(!i)
+            throw 10;
 
-        catch (...)
-        {
-            
-            //std::cout << name << std::endl;
-        }
-        std::cout << "the programm is countinue" << std::endl;
+    }
+    catch(std::bad_alloc &e)
+    {   
+        std::cout << "id here with alloc error" << std::endl;
+        std::cout << "is here " << e.what() << std::endl;
+    }
+    catch(int e)
+    {
+        std::cout  <<  "is here with int error" << std::endl;
+    }
 }
