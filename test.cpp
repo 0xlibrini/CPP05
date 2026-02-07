@@ -27,27 +27,70 @@ using namespace std;
 //}
 
 
-class test
-{
-    private:    
-    public:
-    const    std::string name;
-    test *ptr;
-    int age;
+// class test
+// {
+//     private:
 
-        test(std::string str, int a) : name(str)
-        {
-            ptr = new test();
-            age = a;
-        }
-        test(const test& other) : name (other.name)
-        {
-           ptr = other.ptr;
-        }
+//     public:
+//         const    std::string name;
+//         int  *ptr;
+//         int age;
+//         test()
+//         {
+
+//             ptr = new int(age);
+            
+//         }
+//         test( const test& other)
+//         {
+//             ptr = new int(other.age);
+//         }
+//         ~test()
+//         {
+//             delete ptr;
+//         }
+//         // test(std::string str, int a) : name(str)
+//         // {
+
+//         //     age = a;
+//         // }
+// };
+
+// int main()
+// {
+//     test a1 ; 
+//     a1.age = 10;
+//     test a2(a1);
+//     std::cout << a1.age << std::endl;
+// }
+
+class  test
+{
+    public:
+        int a;
+    test()
+    {
+        //a = 10;
+    }
+    test(const test& other)
+    {
+        //this->a  = other.a;
+        std::cout << "is here" << std::endl;
+    }
+    test operator=( const test &other)
+    {
+        this->a = other.a;
+        return *this; 
+    }
 };
 
 int main()
 {
-    test a1("librini ", 21) ; 
-    test a2 = a1;
+    test a;
+    //a.a = 10;
+    test b;
+    test c;
+    c.a = 10;
+    a = b = c;
+    std::cout << "the fisrt " << b.a << "   " <<  a.a << std::endl;
 }
