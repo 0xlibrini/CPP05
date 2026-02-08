@@ -36,6 +36,6 @@ void    Bureaucrat::incrementGrade()
 
 void Bureaucrat::decrementGrade()
 {
-     if( grade < 150 )
+    if( grade < 150 )
         grade++;
 }
