@@ -64,33 +64,35 @@ using namespace std;
 //     std::cout << a1.age << std::endl;
 // }
 
-class  test
+
+class test
 {
-    public:
-        int a;
-    test()
-    {
-        //a = 10;
-    }
-    test(const test& other)
-    {
-        //this->a  = other.a;
-        std::cout << "is here" << std::endl;
-    }
-    test operator=( const test &other)
-    {
-        this->a = other.a;
-        return *this; 
-    }
+    protected:
+        std::string name;
+    // public:
+    //      virtual  void hello()
+    //      {
+    //          std::cout << "hello world " << std::endl;
+    //      }
+};
+
+class test1 : public test 
+{
+    private:
+        void here()
+        {
+            name = "anas";
+        }
+        void  hello()
+        {
+            std::cout << "happen here " << std::endl;
+        }   
 };
 
 int main()
+
 {
-    test a;
-    //a.a = 10;
-    test b;
-    test c;
-    c.a = 10;
-    a = b = c;
-    std::cout << "the fisrt " << b.a << "   " <<  a.a << std::endl;
+    test1 obj3;
+    test &obj = obj3;
+   obj.hello();
 }
