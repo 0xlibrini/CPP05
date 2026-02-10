@@ -4,9 +4,10 @@ int main()
 {
     try
     {
-        Bureaucrat  a1("ash", 152); 
+        Bureaucrat  a1("ash", 150); 
+        std::cout << a1;
     }
-    catch(Bureaucrat::GradeTooHighException& e)
+    catch(std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
