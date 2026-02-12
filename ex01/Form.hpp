@@ -12,9 +12,9 @@ class Form
         const int gradeToSign;
         const int gradeToExecute;
         Form();
+
     public:
         Form(std::string n , int grade);
-        Form(std::string name, int singrade, int exgrade);
         Form(const Form& other);
         Form& operator=(const Form& other);
         ~Form();
@@ -22,6 +22,19 @@ class Form
         bool getIsSigned() const;
         int getGradeToSign() const;
         int getGradeToExecute() const;
+
+    class GradeTooHighException : public std::exception
+        {
+            public:
+                const char *what() throw();
+        };
+
+    class GradeTooLowException : public std::exception
+        {
+            public:
+                const char *what() throw();
+
+        };
 };
 
 #endif

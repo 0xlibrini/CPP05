@@ -4,14 +4,13 @@ Form::Form(std::string n, int grade) : name(n), gradeToSign(grade),
 gradeToExecute(0)
 {
     isSigned = false;
+    if( gradeToSign > 150 )
+        throw Form::GradeTooLowException();
+    if( gradeToSign <= 0 )
+        throw Form::GradeTooHighException();
 }
 Form::Form(const Form& other) : name(other.name) , isSigned(other.isSigned) 
 , gradeToSign(other.gradeToSign) , gradeToExecute(other.gradeToExecute)
-{
-
-}
-Form::Form(std::string n, int singrade, int exgrade) : name(n) 
-, gradeToSign(singrade) , gradeToExecute(exgrade)
 {
 
 }
@@ -43,6 +42,16 @@ int Form::getGradeToSign() const
 int Form::getGradeToExecute() const
 {
     return gradeToExecute;
+}
+
+const char * Form::GradeTooHighException::what() throw()
+{
+    return "Grade Too high";
+}
+
+const char* Form::GradeTooLowException::what() throw()
+{
+    return "Grade Too Low";
 }
 
 
