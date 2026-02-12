@@ -17,11 +17,32 @@ Form::Form(std::string n, int singrade, int exgrade) : name(n)
 }
 Form&    Form::operator=(const Form& other)
 {
-    this->isSigned = other.isSigned ;
+    this->isSigned = other.isSigned;
     return *this;
 }
 
-std::string  Form::getName() 
+Form::~Form()
+{
+
+}
+std::string  Form::getName() const
 {
     return name;
 }
+
+bool Form::getIsSigned() const
+{
+    return isSigned;
+}
+
+int Form::getGradeToSign() const
+{
+    return gradeToSign;
+}
+
+int Form::getGradeToExecute() const
+{
+    return gradeToExecute;
+}
+
+
