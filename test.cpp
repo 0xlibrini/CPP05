@@ -2,22 +2,31 @@
 
 class test 
 {
-        std::string name;
+    
+    char  num;
+    
     public:
-        void hello()
+     const std::string name;
+        test() : name("anas")
+        { 
+
+        }
+
+        std::string getname() const
         {
-            std::cout <<  "this is hello function"  << std::endl;
+            return name;
+        }
+        void hello(const test& other)
+        {
+            std::cout << other.getname() << std::endl;
         }
 };
-    std::iostream&  operator<<(std::iostream& out )
-    {
-        out << "anas librini" << std::endl;
-        return out;
-    } 
+
 
 int main()
 {
-        test obj; 
-       std::ostream s;
+
+    test a1;
+    a1.hello(a1);
     //    std::cout  <<  obj;
 }
