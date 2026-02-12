@@ -6,27 +6,23 @@ class test
     char  num;
     
     public:
-     const std::string name;
+        std::string name;
         test() : name("anas")
         { 
 
         }
+        test(std::string n)
+        {
+            name = n;
+        }
 
-        std::string getname() const
-        {
-            return name;
-        }
-        void hello(const test& other)
-        {
-            std::cout << other.getname() << std::endl;
-        }
 };
 
 
 int main()
 {
 
-    test a1;
-    a1.hello(a1);
+    test a1 = a1("anas");
+
     //    std::cout  <<  obj;
 }
