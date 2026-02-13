@@ -54,4 +54,10 @@ const char* Form::GradeTooLowException::what() throw()
     return "Grade Too Low";
 }
 
+void    Form::beSigned(const Bureaucrat& other) 
+{
+    if(other.getGrade() > gradeToSign)
+        throw Form::GradeTooLowException();
+    isSigned = true;
+}
 
