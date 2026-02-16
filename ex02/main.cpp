@@ -1,10 +1,12 @@
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-        AForm a1("wti9a",50);
-        Bureaucrat ww("ash", 30);
-        ww.signAForm(a1); 
-        std::cout << a1.getIsSigned();      
+        Bureaucrat bureaucrat("ash",137);
+        ShrubberyCreationForm a1("home");
+        bureaucrat.signAForm(a1);
+        a1.execute(bureaucrat);
+        std::cout << a1.getIsSigned() << std::endl;
+
 }

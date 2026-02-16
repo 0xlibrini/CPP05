@@ -2,13 +2,13 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-AForm::AForm(std::string n, int grade) : name(n), gradeToSign(grade),
-gradeToExecute(0)
+AForm::AForm(std::string n, int gradeSING , int gradeEXEC) : name(n), gradeToSign(gradeSING),
+gradeToExecute(gradeEXEC)
 {
     isSigned = false;
-    if( gradeToSign > 150 )
+    if( gradeToSign > 150 || gradeToExecute > 150)
         throw AForm::GradeTooLowException();
-    if( gradeToSign <= 0 )
+    if( gradeToSign <= 0  || gradeToExecute <= 0)
         throw AForm::GradeTooHighException();
 }
 AForm::AForm(const AForm& other) : name(other.name) , isSigned(other.isSigned) 

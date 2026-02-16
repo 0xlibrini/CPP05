@@ -2,22 +2,28 @@
 
 class test
 {
+
+    std::string  name;
+    int grade;
     public:
-        void  hello()
+        test()
         {
-            std::cout << "Hello World" <<  std::endl;
+            name = "anas";
+            grade = 22;
         }
-        virtual void makesound() = 0;
-    
+        std::string   getname()
+        {
+            return name;
+        }
+        int getgrade()
+        {
+            return grade;
+        }
 };
 
 class test1: public test
 {
     public:
-        void makesound()
-        {
-            std::cout << "mow" << std::endl;
-        }
 };
 
 int main()
@@ -25,7 +31,5 @@ int main()
 
 
     test1 a;
-
-    a.hello();
-    
+    std::cout << a.getname() << std::endl ;  
 }
