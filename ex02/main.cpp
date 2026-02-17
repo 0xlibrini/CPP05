@@ -4,7 +4,9 @@
 
 int main()
 {
-        Bureaucrat bureaucrat("ash",2);
+        try
+        {
+                Bureaucrat bureaucrat("ash",73);
         // ShrubberyCreationForm a1("home");
         // bureaucrat.signAForm(a1);
         // a1.execute(bureaucrat);
@@ -15,4 +17,10 @@ int main()
         bureaucrat.executeForm(a2);
         bureaucrat.executeForm(a2);
         ft_success(bureaucrat, a2);
+        }
+        catch(std::exception& e)
+        {
+                std::cout << "insufficient grade to perform this operation" << std::endl;
+                std::cout << e.what() << std::endl;
+        }
 }

@@ -72,11 +72,6 @@ std::ostream& operator<<(std::ostream& out,const Bureaucrat& obj)
 void    Bureaucrat::executeForm(const AForm& form)
 {
     form.execute(*this);
-    // static int i = 1;
-
-    // if(i)
-    //     std::cout <<  this->getName() <<", bureaucrat grade " << this->getGrade() << " executed " << form.getName() << std::endl;
-    // i = 0;
 }
 
 void ft_success(const Bureaucrat& bureaucrat , const AForm& form)
