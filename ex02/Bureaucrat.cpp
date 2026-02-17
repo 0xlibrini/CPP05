@@ -69,6 +69,21 @@ std::ostream& operator<<(std::ostream& out,const Bureaucrat& obj)
     return out;
 }
 
+void    Bureaucrat::executeForm(const AForm& form)
+{
+    form.execute(*this);
+    // static int i = 1;
+
+    // if(i)
+    //     std::cout <<  this->getName() <<", bureaucrat grade " << this->getGrade() << " executed " << form.getName() << std::endl;
+    // i = 0;
+}
+
+void ft_success(const Bureaucrat& bureaucrat , const AForm& form)
+{
+    std::cout <<  bureaucrat.getName() <<", bureaucrat grade " << bureaucrat.getGrade() << " executed " << form.getName() << std::endl;
+}
+
 void Bureaucrat::signAForm(AForm& Form)
 {
     Form.beSigned(*this);

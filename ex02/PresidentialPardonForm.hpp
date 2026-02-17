@@ -4,7 +4,7 @@
 
 #include "AForm.hpp"
 
-class 
+
 
 
 

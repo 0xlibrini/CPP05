@@ -9,8 +9,9 @@ class AForm;
 class  Bureaucrat
 {
     private:
-    const std::string name;
-    int grade;
+        const std::string name;
+        int grade;
+
     public:
         Bureaucrat();
         Bureaucrat(const std::string name, int num);
@@ -22,6 +23,7 @@ class  Bureaucrat
         void incrementGrade();
         void decrementGrade();
         void signAForm(AForm& AForm);
+        void executeForm(AForm const & form);
         class  GradeTooHighException : public std::exception
         {
             public:
@@ -37,4 +39,5 @@ class  Bureaucrat
     };
     
     std::ostream& operator<<(std::ostream &out , const Bureaucrat& obj);
+    void ft_success(const Bureaucrat& bureaucrat , const AForm& form );
     #endif
