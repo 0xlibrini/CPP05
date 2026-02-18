@@ -6,7 +6,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string n) : AForm("Roboto my request form", 72 , 25)
+RobotomyRequestForm::RobotomyRequestForm(std::string n) : AForm("Robotomy request form", 72 , 25)
 {
     target = n;
 }

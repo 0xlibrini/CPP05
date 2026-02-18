@@ -10,7 +10,7 @@ class ShrubberyCreationForm : public AForm
         std::string target;
         ShrubberyCreationForm();
     public:
-        ShrubberyCreationForm(std::string n): AForm("Shurbbery", 145, 137)
+        ShrubberyCreationForm(std::string n): AForm("ShurbberyCreationForm", 145, 137)
         {
             target = n + "_shurberry";
         }
