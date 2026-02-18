@@ -1,10 +1,31 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm ("ShurbberyCreationForm" , 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other)
+{
+   this->target = other.target;
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 
 }
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& form)
+{
+      if( this != &form)
+      {
+         AForm::operator=(form);
+         this->target = form.target;
+      }
+   return *this;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string n): AForm("ShurbberyCreationForm", 145, 137)
+{
+   target = n + "_shurberry";
+}
+
 void ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 {
    if(getIsSigned() && bureaucrat.getGrade() <= 137)

@@ -16,6 +16,16 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& form) : AFor
     this->target = form.target;
 }
 
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
+{
+    if(this != &other)
+    {
+        AForm::operator=(other);
+        this->target = other.target;
+    }
+    return *this;
+}
+
 void  RobotomyRequestForm::execute(const Bureaucrat &bureaucrat) const
 {
     if((!this->getIsSigned()) || bureaucrat.getGrade() > this->getGradeToExecute())

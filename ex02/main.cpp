@@ -25,7 +25,6 @@ int main()
                 bureaucrat.signAForm(form2);
                 bureaucrat.executeForm(form2);
                 ft_success(bureaucrat, form2);
-
         }
         catch(std::exception& e)
         {

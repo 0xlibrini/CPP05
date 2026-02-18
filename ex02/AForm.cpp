@@ -11,11 +11,13 @@ gradeToExecute(gradeEXEC)
     if( gradeToSign <= 0  || gradeToExecute <= 0)
         throw AForm::GradeTooHighException();
 }
+
 AForm::AForm(const AForm& other) : name(other.name) , isSigned(other.isSigned) 
 , gradeToSign(other.gradeToSign) , gradeToExecute(other.gradeToExecute)
 {
 
 }
+
 AForm&    AForm::operator=(const AForm& other)
 {
     this->isSigned = other.isSigned;
