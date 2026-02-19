@@ -1,9 +1,19 @@
 #include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-AForm* create()
+AForm* CreateShrubberyCreationForm()
+{
+    return  new ShrubberyCreationForm("Shurbbery");
+}
+AForm* CreatePresidentialPardonForm()
 {
     return  new PresidentialPardonForm("President");
+}
+AForm* CreateRobotomyRequestForm()
+{
+    return  new RobotomyRequestForm("ROBOTO");
 }
 
 AForm* Intern::makeForm(std::string form , std::string target)
@@ -13,12 +23,17 @@ AForm* Intern::makeForm(std::string form , std::string target)
     arr[1] = "RobotomyRequestForm";
     arr[2] = "PresidentialPardonForm";
     
-    // AForm *ptr[3] = 
+    AForm* (*ptr[3])() = {
+        CreateShrubberyCreationForm,
+
+    };
+
      int i = 0;
     while( i < 3)
     {
         if(arr[i] == form)
-            i++;
+            (ptr[0])();
+        i++;
     }
     return NULL;
 }
