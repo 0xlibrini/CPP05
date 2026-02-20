@@ -32,10 +32,26 @@ int main()
         //         std::cout << e.what() << std::endl;
         //         std::cout << "insufficient grade to perform this operation" << std::endl;
         // }
-
-        Intern stagaire;
-        AForm *test = stagaire.makeForm("ShrubberyCreationForm", "world");
-        bureaucrat.signAForm(*test);
-        test->execute(bureaucrat);
+        try
+        {
+                try
+                {
+                        Intern stagaire;
+                        AForm *test = stagaire.makeForm("Form", "world");
+                        if(!test)
+                                throw 5;
+                        bureaucrat.signAForm(*test);
+                        test->execute(bureaucrat);
+                }
+                catch(...)
+                {
+                        std::cout << "is done" << std::endl;
+                        throw;
+                }
+        }
+        catch(int e)
+        {
+                std::cout << e << std::endl;
+        }
         // test->t
 }

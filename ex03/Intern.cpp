@@ -3,18 +3,20 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
+std::string _target;
+
 AForm* CreateShrubberyCreationForm()
 {
     std::cout << "is here" << std::endl;
-    return  new ShrubberyCreationForm("Shurbbery");
+    return  new ShrubberyCreationForm(_target);
 }
 AForm* CreatePresidentialPardonForm()
 {
-    return  new PresidentialPardonForm("President");
+    return  new PresidentialPardonForm(_target);
 }
 AForm* CreateRobotomyRequestForm()
 {
-    return  new RobotomyRequestForm("ROBOTO");
+    return  new RobotomyRequestForm(_target);
 }
 
 AForm* Intern::makeForm(std::string form , std::string target)
@@ -33,7 +35,10 @@ AForm* Intern::makeForm(std::string form , std::string target)
     while( i < 3)
     {
         if(arr[i] == form)
+        {
+            _target = target;
             return (ptr[i])();
+        }
         i++;
     }
     return NULL;
