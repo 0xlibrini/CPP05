@@ -8,7 +8,7 @@ int main()
 {
         // try
         // {
-        //         Bureaucrat bureaucrat("BoB",2);
+                Bureaucrat bureaucrat("BoB",2);
         //         ShrubberyCreationForm form("home");
         //         bureaucrat.signAForm(form);
         //         bureaucrat.executeForm(form);
@@ -34,5 +34,8 @@ int main()
         // }
 
         Intern stagaire;
-        stagaire.makeForm("ShrubberyCreationForm", "world");
+        AForm *test = stagaire.makeForm("ShrubberyCreationForm", "world");
+        bureaucrat.signAForm(*test);
+        test->execute(bureaucrat);
+        // test->t
 }

@@ -5,6 +5,7 @@
 
 AForm* CreateShrubberyCreationForm()
 {
+    std::cout << "is here" << std::endl;
     return  new ShrubberyCreationForm("Shurbbery");
 }
 AForm* CreatePresidentialPardonForm()
@@ -25,14 +26,14 @@ AForm* Intern::makeForm(std::string form , std::string target)
     
     AForm* (*ptr[3])() = {
         CreateShrubberyCreationForm,
-
+        CreatePresidentialPardonForm,
+        CreateRobotomyRequestForm,
     };
-
-     int i = 0;
+    int i = 0;
     while( i < 3)
     {
         if(arr[i] == form)
-            (ptr[0])();
+            return (ptr[i])();
         i++;
     }
     return NULL;
