@@ -7,7 +7,6 @@ std::string _target;
 
 AForm* CreateShrubberyCreationForm()
 {
-    std::cout << "is here" << std::endl;
     return  new ShrubberyCreationForm(_target);
 }
 AForm* CreatePresidentialPardonForm()
@@ -37,6 +36,7 @@ AForm* Intern::makeForm(std::string form , std::string target)
         if(arr[i] == form)
         {
             _target = target;
+            std::cout << "Intern create " << form << std::endl;
             return (ptr[i])();
         }
         i++;
