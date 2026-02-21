@@ -5,6 +5,24 @@
 
 std::string _target;
 
+Intern::Intern()
+{
+
+}
+Intern::Intern(const Intern& other)
+{
+    (void)other;
+}
+Intern& Intern::operator=(const Intern& other)
+{
+    (void)other;
+    return *this;
+}
+
+Intern::~Intern()
+{
+
+}
 AForm* CreateShrubberyCreationForm()
 {
     return  new ShrubberyCreationForm(_target);

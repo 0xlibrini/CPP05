@@ -3,14 +3,14 @@
 
 #include  "AForm.hpp"
 
-class  PresidentialPardonForm;
-
 class Intern
 {
     public:
+        Intern();
+        Intern(const Intern& other);
+        Intern& operator=(const Intern& other);
+        ~Intern();
         AForm* makeForm(std::string name, std::string target);
 };
-    
-void    create1();
-void    create2();
+
 #endif

@@ -8,7 +8,6 @@ int main()
 {
         try
         {
-                Bureaucrat bureaucrat("BoB",2);
                 Intern stagaire;
                 std::string Form = "ShrubberyCreationForm";
                 AForm *form = stagaire.makeForm(Form, "world");
