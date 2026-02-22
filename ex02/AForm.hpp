@@ -30,13 +30,13 @@ class AForm
         class GradeTooHighException : public std::exception
         {
             public:
-                const char *what() throw();
+                const char *what() const throw();
         };
 
     class GradeTooLowException : public std::exception
         {
             public:
-                const char *what() throw();
+                const char *what() const throw();
 
         };
 };

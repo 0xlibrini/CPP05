@@ -1,7 +1,5 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {}
-
 Bureaucrat::Bureaucrat(const std::string n, int num) : name(n)
 {
     if (num < 1)

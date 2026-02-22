@@ -30,6 +30,8 @@ int main()
 {
 
 
-    test1 a;
-    std::cout << a.getname() << std::endl ;  
+    // test1 a;
+    // std::cout << a.getname() << std::endl ;  
+    bool test = 1;
+    std::cout <<  test << std::endl;
 }

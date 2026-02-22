@@ -48,12 +48,12 @@ int AForm::getGradeToExecute() const
     return gradeToExecute;
 }
 
-const char * AForm::GradeTooHighException::what() throw()
+const char * AForm::GradeTooHighException::what() const throw()
 {
     return "Grade Too high";
 }
 
-const char* AForm::GradeTooLowException::what() throw()
+const char* AForm::GradeTooLowException::what() const throw()
 {
     return "Grade Too Low";
 }

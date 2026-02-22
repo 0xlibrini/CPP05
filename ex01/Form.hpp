@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class Form
 {
@@ -30,13 +30,13 @@ class Form
     class GradeTooHighException : public std::exception
         {
             public:
-                const char *what() throw();
+                const char *what() const throw();
         };
 
     class GradeTooLowException : public std::exception
         {
             public:
-                const char *what() throw();
+                const char *what() const throw();
 
         };
 };
