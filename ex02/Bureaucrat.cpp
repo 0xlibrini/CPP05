@@ -81,8 +81,8 @@ void ft_success(const Bureaucrat& bureaucrat , const AForm& form)
 
 void ft_failure(const  Bureaucrat& bureaucrat, const  AForm& form1)
 {
-    std::cout  << bureaucrat.getName() << "couldn't execute " << form1.getName()
-        <<  "because Grade too low" << std::endl;
+    std::cout  << bureaucrat.getName() << " couldn't execute " << form1.getName()
+        <<  " because Grade too low" << std::endl;
 }
 
 void Bureaucrat::signAForm(AForm& Form)

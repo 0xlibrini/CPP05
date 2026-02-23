@@ -7,12 +7,15 @@ int main()
 {
         try
         {
-                Bureaucrat bureaucrat("BoB",100);
+                Bureaucrat bureaucrat("BoB",2);
                 std::cout << "-----------Form 1 (Shrubbery) -------------" << std::endl;
                 ShrubberyCreationForm form("home");
                 bureaucrat.signAForm(form);
                 bureaucrat.executeForm(form);
-                ft_success(bureaucrat, form);
+                if(form.getIsSigned())
+                        ft_success(bureaucrat, form);
+                else
+                        ft_failure(bureaucrat,form);
                 std::cout << std::endl;
 
                 std::cout << "-----------Form 2 (Robot) -------------" << std::endl;
@@ -32,11 +35,13 @@ int main()
                 PresidentialPardonForm form2("President");
                 bureaucrat.signAForm(form2);
                 bureaucrat.executeForm(form2);
-                ft_success(bureaucrat, form2);
+                if(form1.getIsSigned())
+                        ft_success(bureaucrat, form1);
+                else
+                        ft_failure(bureaucrat, form1);
         }
         catch(std::exception& e)
         {
                 std::cout << e.what() << std::endl;
-                std::cout << "insufficient grade to perform this operation" << std::endl;
         }
 }
