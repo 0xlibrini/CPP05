@@ -20,7 +20,7 @@ class AForm
         AForm(std::string n , int gradeSING , int gradeEXEC);
         AForm(const AForm& other);
         AForm& operator=(const AForm& other);
-        virtual ~AForm();
+        ~AForm();
         std::string getName() const ;
         bool getIsSigned() const;
         int getGradeToSign() const;
@@ -30,13 +30,13 @@ class AForm
         class GradeTooHighException : public std::exception
         {
             public:
-                const char *what() throw();
+                const char *what() const throw();
         };
 
     class GradeTooLowException : public std::exception
         {
             public:
-                const char *what() throw();
+                const char *what() const throw();
 
         };
 };
