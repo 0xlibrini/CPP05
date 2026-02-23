@@ -6,7 +6,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string n) : AForm("Robotomy request form", 72 , 25)
+RobotomyRequestForm::RobotomyRequestForm(std::string n) : AForm("Robotomy request form", 72 , 45)
 {
     target = n;
 }
@@ -28,17 +28,25 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 
 void  RobotomyRequestForm::execute(const Bureaucrat &bureaucrat) const
 {
-    if((!this->getIsSigned()) || bureaucrat.getGrade() > this->getGradeToExecute())
+    try
     {
-        throw RobotomyRequestForm::GradeTooLowException();
-    }
+   
+        if((!this->getIsSigned()) || bureaucrat.getGrade() > this->getGradeToExecute())
+            throw RobotomyRequestForm::GradeTooLowException();
     else
     {
         static int i;
         if( i % 2 == 0)
-            std::cout << target << " has been robotmized" << std::endl;
+            std::cout << "CLICK-CLACK! " << target << " has been robotmized" << std::endl;
         else
-            std::cout << target << " the robotomy failed" << std::endl;
-        i++;
+        {
+            std::cout << "CLICK-CLACK! " << target << " the robotomy failed" << std::endl;
+            i++;
+        }
+    }
+    }
+    catch(RobotomyRequestForm::GradeTooLowException &e)
+    {
+        std::cout << e.what() << std::endl;
     }
 }
