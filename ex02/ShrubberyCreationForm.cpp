@@ -32,8 +32,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
    {
       if(getIsSigned() && bureaucrat.getGrade() <= 137)
       {
-         char const *File = target.c_str();
-         std::ofstream file(File);
+         std::ofstream file(target.c_str());
          file << "                      ___" << std::endl;
          file << "                _,-'\"\"   \"\"\"\"`--." << std::endl;
          file << "             ,-'          __,,-- \\" << std::endl;
