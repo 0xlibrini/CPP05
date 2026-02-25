@@ -78,3 +78,4 @@ std::ostream&  operator<<(std::ostream& out, const AForm& AForm)
     out << AForm.getName() << " signed yes" << "gradeTosign " << AForm.getGradeToSign();
     return out;
 }
+

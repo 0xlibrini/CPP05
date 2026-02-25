@@ -1,37 +1,23 @@
 #include <iostream>
 
-class test
-{
 
-    std::string  name;
-    int grade;
-    public:
-        test()
-        {
-            name = "anas";
-            grade = 22;
-        }
-        std::string   getname()
-        {
-            return name;
-        }
-        int getgrade()
-        {
-            return grade;
-        }
+class    test
+{
+    private:
+        int x;
+        char m;
 };
 
-class test1: public test
+class test2: public test
 {
-    public:
+    
 };
+
 
 int main()
 {
+    test x;
+    
+    test2 *z = &x;
 
-
-    // test1 a;
-    // std::cout << a.getname() << std::endl ;  
-    bool test = 1;
-    std::cout <<  test << std::endl;
 }

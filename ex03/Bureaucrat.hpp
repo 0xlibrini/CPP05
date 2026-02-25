@@ -40,4 +40,5 @@ class  Bureaucrat
     
     std::ostream& operator<<(std::ostream &out , const Bureaucrat& obj);
     void ft_success(const Bureaucrat& bureaucrat , const AForm& form );
+    void ft_failure(const  Bureaucrat& bureaucrat, const  AForm& form1);
     #endif
